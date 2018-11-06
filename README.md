@@ -7,6 +7,15 @@ containing the lede, title, description and any images found.
 
 Currently, Steve uses the `pismo` gem to process the URL downstream.
 
+## Running with Docker
+
+The included `Dockerfile` makes the service available on port 3000.
+
+```
+docker build -t="$USER/${PWD##*/}:$(git rev-parse --abbrev-ref HEAD)" .
+docker run -p 3000:3000 "$USER/${PWD##*/}:$(git rev-parse --abbrev-ref HEAD)"
+```
+
 ## Example Usage (Ruby)
 
 ```
